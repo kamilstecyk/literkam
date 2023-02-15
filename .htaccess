@@ -1,0 +1,15 @@
+### PROTECT FILES ###
+<FilesMatch "\.(htaccess|htpasswd|ini|fla|psd|log|sh)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+RewriteEngine on
+RewriteRule Strona-Glowna index.html
+RewriteRule Kontakt-z-nami kontakt.html
+RewriteRule Nasza-oferta oferta.html
+RewriteRule Lokalizacja-naszego-kamieniarstwa lokalizacja.html
+RewriteRule Galeria-naszych-zdjec zdjecia.html
+
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://literkam.ct8.pl [R,L]
